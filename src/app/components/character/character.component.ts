@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MarvelService } from 'src/app/services/marvel.service';
 
 @Component({
   selector: 'app-character',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharacterComponent implements OnInit {
 
-  constructor() { }
+  character;
+  constructor(private route: ActivatedRoute, private marvelService: MarvelService, private router: Router) { }
 
   ngOnInit() {
+    const id = this.route.snapshot.params['id'];
+    this.marvelService.getOneCharacterById(+id)
   }
 
+  onBack() {
+    this.router.navigate(['/characters']);
+  }
 }

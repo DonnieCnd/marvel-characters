@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MarvelService } from 'src/app/services/marvel.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-characters',
@@ -12,7 +13,7 @@ export class CharactersComponent implements OnInit {
   charactersFiltered = []
   nameStartsWith: string;
 
-  constructor(private marvelService: MarvelService) { }
+  constructor(private marvelService: MarvelService, private router: Router) { }
 
   ngOnInit() {
     this.showCharacters()
@@ -40,6 +41,10 @@ export class CharactersComponent implements OnInit {
     } else {
       this.showCharacters()
     }
+  }
+
+  onViewCharacter(id: number) {
+    this.router.navigate(['/character', id]);
   }
 
 }
