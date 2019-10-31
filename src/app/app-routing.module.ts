@@ -1,10 +1,22 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { CharactersComponent } from './components/characters/characters.component';
+import { CharacterComponent } from './components/character/character.component';
 
+const routes: Routes = [
+  { path: '', component: CharactersComponent },
+  { path: 'characters', component: CharactersComponent },
+  { path: 'character', component: CharacterComponent}
+];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  declarations: [],
+  imports: [
+    CommonModule,
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules
+    })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

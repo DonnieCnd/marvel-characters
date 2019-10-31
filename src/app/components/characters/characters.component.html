@@ -1,0 +1,22 @@
+<div class="page">
+  <div class="table-responsive-md">
+    <table class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <th><input placeholder=" Name" (keyup)="showCharacterByName()" [(ngModel)]="nameStartsWith"></th>
+          <th>Picture</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div class="errorMessage" *ngIf="characters.length === 0">
+            <img src="assets/images/hulk.jpg" alt="image hulk" class="imgHulk" width='200px' height='150px'>
+            <p><strong> Not Found !! Try again !!!</strong></p>
+        </div>
+        <tr *ngFor="let character of characters">
+            <td>{{character.name | uppercase }}</td> 
+            <td><img [src]="character.thumbnail.path + '.' + character.thumbnail.extension" width='50px' height='50px'></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

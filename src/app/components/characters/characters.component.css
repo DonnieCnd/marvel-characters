@@ -1,0 +1,40 @@
+td {
+    text-align: center;
+    vertical-align: middle;
+}
+th {
+    text-align: center;
+}
+table {
+    font-family: Trebuchet MS;
+    font-style: italic;
+}
+::-webkit-input-placeholder {
+    text-align: center;
+    font-family: Trebuchet MS;
+    font-style: italic;
+}
+ 
+:-moz-placeholder { 
+    text-align: center;  
+}
+ 
+::-moz-placeholder { 
+    text-align: center;  
+}
+ 
+:-ms-input-placeholder {  
+    text-align: center; 
+}
+.page {
+     background-color: black;
+}
+.errorMessage {
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 100%;
+}
+.imgHulk {
+    border-radius: 5%;
+    margin-bottom: 2%;
+}
