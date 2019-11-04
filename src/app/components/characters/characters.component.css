@@ -27,10 +27,14 @@ table {
     text-align: center; 
 }
 
-.errorMessage {
+.notFoundMessage {
     text-align: center;
     margin-top: 5%;
     background-color: black;
+}
+.loadingMessage {
+    text-align: center;
+    margin-top: 5%;
 }
 .imgHulk {
     border-radius: 5%;

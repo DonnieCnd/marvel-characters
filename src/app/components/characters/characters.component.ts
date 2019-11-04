@@ -11,6 +11,7 @@ export class CharactersComponent implements OnInit {
 
   characters= [];
   nameStartsWith: string;
+  isLoaded = false;
 
   constructor(private marvelService: MarvelService, private router: Router) { }
 
@@ -21,6 +22,7 @@ export class CharactersComponent implements OnInit {
   showCharacters(){
     this.marvelService.getCharacters("characters").subscribe(res => {
       this.characters = res.data.results
+      this.isLoaded = true;
     },
     error => {
       console.log(error)
@@ -31,6 +33,7 @@ export class CharactersComponent implements OnInit {
     if(this.nameStartsWith){
       this.marvelService.getOneCharacter("characters", this.nameStartsWith).subscribe(res => {
         this.characters = res.data.results
+        this.isLoaded = true;
       },
       error => {
         console.log(error)
