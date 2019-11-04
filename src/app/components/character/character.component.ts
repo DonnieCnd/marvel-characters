@@ -9,12 +9,19 @@ import { MarvelService } from 'src/app/services/marvel.service';
 })
 export class CharacterComponent implements OnInit {
 
-  character;
+  character = [];
   constructor(private route: ActivatedRoute, private marvelService: MarvelService, private router: Router) { }
 
   ngOnInit() {
+    this.showCharacter()
+  }
+
+  showCharacter() {
     const id = this.route.snapshot.params['id'];
-    this.marvelService.getOneCharacterById(+id)
+    this.marvelService.getOneCharacterById("characters/", id).subscribe(res => {
+      this.character = res.data.results
+      console.log(this.character)
+    })
   }
 
   onBack() {

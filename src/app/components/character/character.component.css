@@ -1,0 +1,25 @@
+.card {
+    font-family: Trebuchet MS;
+    font-style: italic;
+    text-align: center;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    background-color: black;
+    border: solid 1px white;
+    color: white;
+}
+button {
+    border: solid 1px white;
+    color: white;
+    margin-bottom: 3%;
+}
+img {
+    margin-top: 3%;
+}
+h2 {
+    text-decoration: underline overline;
+}
+h3 {
+    text-decoration: underline;
+}

@@ -14,7 +14,7 @@
           </td>
       </tbody>
       <tbody>
-        <tr *ngFor="let character of characters; let i = character" (click)="onViewCharacter(i)">
+        <tr *ngFor="let character of characters; let i = index" (click)="onViewCharacter(i)">
             <td>{{character.name | uppercase }}</td> 
             <td><img [src]="character.thumbnail.path + '.' + character.thumbnail.extension" width='50px' height='50px'></td>
         </tr>

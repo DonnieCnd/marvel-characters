@@ -36,8 +36,8 @@ export class MarvelService {
     return this.httpClient.get(apiUrl).pipe(map(res => res))
   }
 
-  getOneCharacterById(id: number): Observable<any>{
-    let apiUrl = `${this.baseUrl}${id}${this.credentials}`
+  getOneCharacterById(endpoint: string, id: number): Observable<any>{
+    let apiUrl = `${this.baseUrl}${endpoint}${id}${this.credentials}`
     return this.httpClient.get(apiUrl).pipe(map(res => res))
   }
 

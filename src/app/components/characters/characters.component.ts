@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 export class CharactersComponent implements OnInit {
 
   characters= [];
-  charactersFiltered = []
   nameStartsWith: string;
 
   constructor(private marvelService: MarvelService, private router: Router) { }
@@ -44,7 +43,7 @@ export class CharactersComponent implements OnInit {
   }
 
   onViewCharacter(id: number) {
-    this.router.navigate(['/character', id]);
+    this.router.navigate(['/character', this.characters[id].id]);
   }
 
 }
