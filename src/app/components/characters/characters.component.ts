@@ -21,7 +21,6 @@ export class CharactersComponent implements OnInit {
   showCharacters(){
     this.marvelService.getCharacters("characters").subscribe(res => {
       this.characters = res.data.results
-      console.log(this.characters)
     },
     error => {
       console.log(error)
@@ -32,7 +31,6 @@ export class CharactersComponent implements OnInit {
     if(this.nameStartsWith){
       this.marvelService.getOneCharacter("characters", this.nameStartsWith).subscribe(res => {
         this.characters = res.data.results
-        console.log(this.characters)
       },
       error => {
         console.log(error)

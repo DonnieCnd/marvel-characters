@@ -20,7 +20,6 @@ export class CharacterComponent implements OnInit {
     const id = this.route.snapshot.params['id'];
     this.marvelService.getOneCharacterById("characters/", id).subscribe(res => {
       this.character = res.data.results
-      console.log(this.character)
     })
   }
 
