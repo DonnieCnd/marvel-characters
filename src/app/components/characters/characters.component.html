@@ -8,7 +8,7 @@
         </tr>
       </thead>
       <tbody  class="loadingMessage" *ngIf="isLoaded === false">
-        <p> Is Loading...</p>
+        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
       </tbody>
       <tbody class="notFoundMessage" *ngIf="isLoaded && characters.length === 0">
         <td colspan="2">
