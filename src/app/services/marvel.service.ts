@@ -40,9 +40,5 @@ export class MarvelService {
     let apiUrl = `${this.baseUrl}${endpoint}${id}${this.credentials}`
     return this.httpClient.get(apiUrl).pipe(map(res => res))
   }
-
-  getStuff() {
-    return this.credentials;
-  }
  
 }
